@@ -1,0 +1,540 @@
+$baseColor: #ffffff;
+$primaryColor: rgba(226, 180, 121, 0.452);
+// #f9f9ff;
+$baseShadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+$homeFontColor: #777777;
+$homeHeadFont: "Open Sans", sans-serif;
+$duskGray: #f9f9ff;
+$globalFont: "Roboto", sans-serif;
+// $offWhite:#fcfcfc;
+.appContainer{
+  min-height: 100vh;
+}
+.App{
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  font-family: $globalFont;
+  p{
+    font-size: 14px;
+    color: $homeFontColor;
+  }
+}
+.stacked{
+  display: grid;
+  grid-template-columns: 100%;
+}
+textarea{
+  resize: none;
+  height: 140px;
+}
+input{
+  width: 450px;
+  // height: 40px;
+  border: none;
+  border: 1px solid #eeeeee;
+  color: #999;
+  outline: none;
+  padding: 0 12px;
+}
+a{
+  text-decoration: none;
+}
+.primary-background{
+  background-color: $primaryColor;
+}
+.primary-text{
+  color: $primaryColor;
+}
+.btn{
+  width: 155px;
+  height: 52px;
+  font-size: 13px;
+  padding: 15px 45px;
+  color: black;
+  border: 1px solid #222;
+  line-height: 50px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.container{
+  padding: 0 20px;
+}
+.transparent{
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.bottom{
+  align-self: end;
+}
+
+.padding-120{
+  padding: 120px 0;
+}
+.section-header{
+  text-align: center;
+  font-size: 30px;
+}
+.pricing-section{
+  ul{
+    line-height: 2.5;
+    text-decoration: none;
+    padding: 0;
+    li{
+      list-style: none;
+    }
+  }
+}
+.box-shadow{
+  box-shadow: $baseShadow;
+}
+// price section
+.box{
+  position: relative;
+  margin: auto;
+  height: 400px;
+  width: 70%;
+  text-align: center;
+  padding: 50px 30px;
+  box-shadow: $baseShadow;
+  border-radius: 10px;
+}
+.pricing-col{
+  h2{
+    font-family: $homeHeadFont;
+    text-transform: capitalize;
+    font-size: 30px;
+    text-shadow: 1px 2px rgba(119, 119, 119, 0.274);
+  }
+  color: $homeFontColor;
+  margin: 0px 20px ;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr;
+}
+
+
+// about us
+.about{
+  p{
+    text-align: center;
+  }
+}
+
+// feature
+.feature{
+  background-color: $duskGray;
+  p{
+    text-align: center;
+  }
+}
+// banner
+
+.banner{
+  // padding: 0px 0;
+  background-color: $duskGray;
+  display: grid;
+  grid-template-columns: 65% 30%;
+  padding: 40px 5% 120px;
+  .container{
+    padding: 0;
+  }
+  .bannerh1{
+    h1{
+      font-size: 55px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+    }
+  }
+  img{
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+.btn.primary-hover{
+  border: 1px solid $primaryColor;
+}
+.btn.primary-hover:hover{
+  background-color: $baseColor;
+  color: rgba(226, 180, 121, 0.959);
+  font-size: 15px;
+  border: 1px solid $primaryColor;
+}
+.btn.dark-hover:hover{
+  background-color: #222;
+  color: $duskGray;
+  font-size: 15px;
+}
+
+
+// TopNav
+nav.top-nav{
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  padding: 5px 50px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  text-align: right;
+  background-color: $duskGray;
+  #Logo{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+  }
+  ul.nav-links{
+    padding-right: 150px;
+    li{
+      display: inline;
+      list-style: none;
+      margin: 0 20px;
+      a{
+        font-weight: 500;
+        color: #222;
+        // letter-spacing: 2;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+// footer
+footer{
+  padding: 30px 100px;
+  background-color: #222;
+  color: $duskGray;
+  margin: auto;
+  text-align: center;
+}
+
+
+// signin
+
+.signin{
+  .container{
+    width: 50%;
+    margin: auto;
+    grid-row-gap: 30px;
+    .btn{
+      margin: auto;
+      // height: 30px;
+    }
+  }
+}
+
+// email Listsection
+.emailList{
+  text-align: center;
+
+  form{
+    text-align: center;
+    input{
+      width: 450px;
+      height: 40px;
+      border: none;
+      border: 1px solid #eeeeee;
+      color: #999;
+      outline: none;
+      padding: 0;
+    }
+    .email-input{
+      border-top-left-radius: 5px ;
+      border-bottom-left-radius: 5px ;
+      font-size: 14px;
+      width: 350px;
+      padding: 0 15px;
+
+    }
+    .sub-btn{
+      // color: $primaryColor;
+      font-weight: bold;
+      width: 150px;
+      height: 42px;
+      font-size: 14px;
+      border: 1px solid #eeeeee;
+      border-top-right-radius: 5px ;
+      border-bottom-right-radius: 5px ;
+      &:hover{
+        cursor: pointer;
+        background-color: $primaryColor;
+        border: 1px solid $primaryColor;
+        font-size: 14px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+// /request-influencer
+
+.request-influencer{
+  background-color: $duskGray;
+  form{
+    
+    // height: 250px;
+    padding: 0 50px;
+    display: grid;
+    grid-template-areas: 
+      'i LT'
+      'i LT'
+      'i LT'
+      'i LT'
+      'inputVideo inputVideo'
+      'x brand'
+      'btn btn';
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    .info-container{
+      grid-area: i;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 15px;
+      input{
+        width: 80%;
+        height: 40px;
+        box-shadow: $baseShadow;
+        border-radius: 5px;
+        margin: 0 auto;
+        font-size: 15px;
+
+
+      }
+    }
+    .influencer-textarea{
+      grid-area: LT;
+      height: 200px;
+      box-shadow: $baseShadow;
+      border: 0;
+      outline: none;
+      border-radius: 5px;
+      padding: 15px;
+      font-size: 15px;
+
+    }
+    .influencer-textarea-brand{
+      grid-area: brand;
+    }
+    .importSampleVideo{
+      padding: 20px;
+      grid-area: inputVideo;
+      display: grid;
+      grid-template-columns: 100%;
+      text-align: center;
+      grid-gap: 15px;
+      input{
+        width: 60%;
+        margin: 0 auto;
+        height: 100px;
+      }
+    }
+    .sub-btn{
+      grid-area: btn;
+      padding: 0;
+      font-size: 14px;
+      color: #5e5e5e;
+      background-color: $baseColor;
+      cursor: pointer;
+      box-shadow: $baseShadow;
+      line-height: 50px;
+      margin: 15px auto;
+      border: 1px solid $baseColor;
+    }
+  }
+}
+
+
+// main-dashboard
+.main-dashboard{
+  color: rgb(32, 32, 32);
+  .other-accounts{
+    width: 100vw;
+    .acc-container{
+      // background-color: #791616;
+      text-align: right;
+      padding: 20px 20px 0px;
+      img{
+        height: 40px;
+        width: 40px;
+        border-radius: 90%;
+        filter: drop-shadow(5px 5px 5px gray);
+        // filter: blur(0.05px);
+      }
+    }
+
+  }
+  .padding-50{
+    padding:29px 50px 10px;
+    background-color: $duskGray;
+  }
+  h3{
+    margin: 0;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  background-color: $baseColor;
+  // #eff8ff;
+  .header-dash{
+    background-color: $baseColor ;
+    // need to be fixed
+    height: 280px;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    img{
+      border-radius: 50%;
+      width: 70%;
+      height: 100%;
+      margin: auto;
+    }
+    .header-info{
+      display: grid;
+      grid-template-columns: 100%;
+      .account-branding{
+        margin: auto 0;
+        h2{
+          display: flex;
+          margin: 0;
+          padding: 0;
+          height: 50px;
+          justify-content: center;
+          align-items: center;
+        }
+        .category{
+          width: 80%;
+          margin: 0 auto;
+          background-color: #eff8ff;
+          color: $homeFontColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        height: 50px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 250px repeat(2,100px);
+      }
+      .followers{
+        
+        padding: 1px 20px 1px 20px;
+        margin: auto 0;
+        .typeX{
+          // need to change name
+          margin-right: 10px;
+          margin-left: 5px;
+          color: $homeFontColor;
+        }
+        .num{
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      p{
+        margin: 0;
+        padding: 0 20px 10px;
+        line-height: 1.5;
+        width: 80%;
+      }
+    }
+  } 
+  .stat-box-container{
+    background-color: $duskGray;
+    padding: 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-row-gap: 50px;
+    // grid-column-gap: 5px;
+    margin: auto;
+
+  }
+  .stat-box{
+    // padding: 10px;
+    background-color: $baseColor;
+    height: 300px;
+    width: 90%;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: $baseShadow;
+    .container{
+      padding: 20px;
+      .stat{
+        font-size: 50px;
+        font-weight: bold;
+        // text-align: center;
+      }
+      .analytics-title{
+        color: $homeFontColor;
+        text-transform: capitalize;
+
+      }
+    }
+  }
+}
+
+
+// approved Influences influencers-interested
+.influencers-interested{
+  // padding:;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  .request-info{
+    margin-left: 20px;
+    box-shadow: $baseShadow;
+    background-color: $baseColor;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .card-container{
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px ;
+    // card will me neew file
+    .card{
+      // padding: 0 20px;
+      background-color: $baseColor;
+      height: 200px;
+      margin: auto;
+      box-shadow: $baseShadow;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      img{
+        padding: 10px;
+        width: 80%;
+        height: 80%;
+        border-radius: 90%;
+        margin: auto;
+      }
+      .influencer-info{
+        padding: 20px;
+        .accept-btn{
+          padding: 0;
+          border: 0;
+          border: 1px solid $baseColor;
+          padding: 5px 10px;
+          border-radius: 3px;
+          text-transform: capitalize;
+          margin: auto;
+          // text-align: right;
+          font-weight: bold;
+        }
+        .header-fee{
+          // height: 50px;
+          span{
+            font-weight: bolder;
+          }
+          display: grid;
+          grid-template-columns: 80% 20%;
+          h2{
+            padding: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+
+  }
+}
