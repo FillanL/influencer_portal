@@ -1,18 +1,28 @@
 import React, { useState } from 'react'
+import {requestInfluencer} from '../Services/requestInfluencerService'
 
 const RequestInfluencer = () => {
     const initState = {
         title: "",
         atName: "",
         category: "",
-        budget: ""
+        budget: 0,
+        description:"",
+        brandDescription:"",
+        userId: sessionStorage.getItem("u")
     }
     const [requestForm, setRequestForm] = useState(initState)
+    const submitForm=(e)=>{
+        e.preventDefault()
+
+        requestInfluencer(requestForm)
+        setRequestForm(initState)
+    }
     console.log(requestForm)
     return (
         <section className="padding-120 request-influencer">
             <div className="container">
-                <form>
+                <form onSubmit={(e)=>submitForm(e)} >
                     <div className="info-container">
                         <input
                             required
@@ -63,8 +73,13 @@ const RequestInfluencer = () => {
                     <textarea
                         className="influencer-textarea"
                         type="text"
-                        name=""
+                        name="description"
                         placeholder="Describe what you were trying to promote"
+                        value={requestForm.description}
+                        onChange={(e) => setRequestForm({
+                            ...requestForm,
+                            [e.target.name]: e.target.value
+                        })}
                     />
                     <div className="importSampleVideo">
 
@@ -84,8 +99,13 @@ const RequestInfluencer = () => {
                     <textarea
                         className="influencer-textarea influencer-textarea-brand"
                         type="text"
-                        name=""
+                        name="brandDescription"
+                        value={requestForm.brandDescription}
                         placeholder="Tell us about your brand, and why influencers should want to work with you?"
+                        onChange={(e) => setRequestForm({
+                            ...requestForm,
+                            [e.target.name]: e.target.value
+                        })}
                     />
                     <button
                         className="btn sub-btn"

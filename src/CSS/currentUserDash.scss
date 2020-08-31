@@ -1,0 +1,22 @@
+.current-user-dash{
+    max-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    ul.dash-navbar{
+        padding: 5px;
+        li{
+            padding: 10px;
+            cursor: pointer;
+            list-style: none;
+            border-bottom: 1px solid rgb(172, 172, 172);
+            &:hover{
+                color: cornflowerblue;
+            }
+        }
+    }
+    .dash-nav{
+        border-left: 1px solid #e7e7e7;
+        background-color: rgb(185, 185, 185);
+    }
+}

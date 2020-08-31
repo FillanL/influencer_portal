@@ -64,6 +64,11 @@ const TopNav = () => {
                             Sign up
                         </Link>
                     </li>}
+                    <li>
+                        <Link to='/Signin'>
+                            Temp
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         )   

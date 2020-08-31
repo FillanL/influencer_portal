@@ -6,26 +6,26 @@ const MainDashboard = () => {
             <div className="other-accounts">
                 <div className="acc-container">
                     <img
-                        srcSet="https://images.unsplash.com/photo-1595621859602-83c24ba46d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+                        srcSet=""
                         alt="name"
                     />
                     <img
-                        srcSet="https://images.unsplash.com/photo-1595787492151-64f1d38266d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+                        srcSet=""
                         alt="name"
                     />
                     <img
-                        srcSet="https://images.unsplash.com/photo-1595770655731-9a1dc07b4184?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&"
+                        srcSet=""
                         alt="name"
                     />
                     <img
-                        srcSet="https://images.unsplash.com/photo-1595871222310-02a6c323ad2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+                        srcSet=""
                         alt="name"
                     />
                 </div>
             </div>
             <div className="header-dash">
                 <img
-                    srcSet="https://images.unsplash.com/photo-1595871222310-02a6c323ad2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9"
+                    srcSet=""
                     alt="name"
                 />
                 <div className="header-info">

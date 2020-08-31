@@ -1,0 +1,37 @@
+.overview-dash{
+    min-height: 100vh;
+    // height: 100vh;
+    
+    .user-info{
+        background-color: darkcyan;
+        height: 300px;
+        width: 85%;
+        margin: auto;
+        border-radius: 20px;
+
+    }
+    .dash-section{
+        // background-color: rgb(116, 78, 78);
+        display: grid;
+        grid-template-columns: repeat(3,33.33%);
+        // grid-gap: 10px;
+        // height: auto;
+        width: 85%;
+        margin: auto;
+
+        .section-card{
+            padding:10px;
+            margin: 10px 0;
+            margin-left:25px;
+            height: 300px;
+            border-radius: 15px;
+            background-color: rgb(255, 255, 255);
+            &:nth-child(3){
+                margin-right: 10px;
+            }
+        }
+        .no-bg{
+            background-color: transparent;
+        }
+    }
+}
