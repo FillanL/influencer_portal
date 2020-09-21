@@ -3,6 +3,7 @@ import axios from "axios"
 const baseUrl = "http://localhost:3009/apply"
 
 export const applyToRequest=async(applyObject)=>{
+    console.log(applyObject)
     const res = await axios.post(`${baseUrl}/newPromoAppilcation`,applyObject)
     console.log(res,"applied")
 }

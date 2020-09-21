@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-import {loginUser} from '../Services/userLoginService'
+import {newUser} from '../Services/userLoginService'
 
-const Signin = () => {
-    const initialState = {userName:"", password:""}
+const Signup = () => {
+    const initialState = {userName:"", password:"",email:""}
+    const [passwordCheck, setPasswordCheck] = useState({password:""})
+    const [formError, setFormError] = useState({passwordError:false})
     const [login, setLogin] = useState(initialState)
-    // console.log(login)
     return (
         <section className='padding-120 signin transparent'>
             <div className="container stacked">
@@ -22,8 +23,17 @@ const Signin = () => {
             {/* </div> */}
             <form onSubmit={(e)=>{
                 e.preventDefault()
-                loginUser(login)
-                setLogin(initialState)
+                if(passwordCheck.password === login.password){
+
+                    newUser(login)
+                    setLogin(initialState)
+                    setFormError({...formError, passwordError: false })
+
+                    
+                }else{
+                    setFormError({...formError, passwordError: true })
+                    console.log("wrong re-pass")
+                }
                 }}>
                 <div className="form_format">
                     <label>userName</label><br/>
@@ -41,8 +51,24 @@ const Signin = () => {
                 </div>
                 <div className="form_format">
                     
+                    <label>Email</label><br></br>
+                    <input 
+                        name="email"
+                        type="email"
+                        placeholder="email"
+                        value={login.email}
+                        onChange={(e)=>setLogin({
+                            ...login,
+                            [e.target.name]:e.target.value
+                        })}
+                        // pattern=""
+                    />
+                </div>
+                <div className="form_format">
+                    
                     <label>PassWord</label><br></br>
                     <input 
+                        className={formError.passwordError ? "error" : ""}
                         name="password"
                         type="password"
                         placeholder="password"
@@ -52,16 +78,29 @@ const Signin = () => {
                             [e.target.name]:e.target.value
                         })}
                         // pattern=""
+                    /><br/>
+                    <label>Re-password</label><br></br>
+                    <input 
+                        className={formError.passwordError ? "error" : ""}
+                        name="password"
+                        type="password"
+                        placeholder="reEnter password"
+                        value={passwordCheck.password}
+                        onChange={(e)=>setPasswordCheck({
+                            ...passwordCheck,
+                            [e.target.name]:e.target.value
+                        })}
+                        // pattern=""
                     />
                 </div>
                 <button className="btn">Submit</button>
             </form>
             </div>
             <div>
-                don't have an account? <Link to="/signup">signup</Link>
+                already an account? <Link to="/signin">sign in</Link>
             </div>
         </section>
     )
 }
 
-export default Signin
+export default Signup

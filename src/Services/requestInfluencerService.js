@@ -1,7 +1,7 @@
 import axios from "axios"
 const baseUrl = "http://localhost:3009/request"
 
-export const requestInfluencer=async(requestObject)=> async dispatch =>{
+export const requestInfluencer=async(requestObject)=> {
     const request = await axios.post(`${baseUrl}/newRequestPromo`,requestObject)
    
     console.log(request)

@@ -26,7 +26,8 @@ const TopNav = () => {
                         </Link>
                     </div>
                     <div>
-                        {/* <FontAwesomeIcon
+                        {/* need to add fontAwsome */}
+                         {/* <FontAwesomeIcon
                             className="mobile-burger"
                             style={{
                                 // "width":"50px",
@@ -34,7 +35,7 @@ const TopNav = () => {
                             }}
                             onClick={() => navToggle()}
                             icon={['fa', 'bars']} size="2x"
-                        /> */}
+                        />  */}
                     </div>
                 </div>
                 <ul className="nav-links">

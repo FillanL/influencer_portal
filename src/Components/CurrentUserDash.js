@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch} from 'react-redux'
 import '../CSS/currentUserDash.scss'
 import MainDashboard from './MainDashboard'
-import {getAllRequest, getRequestByUserId} from '../Services/requestInfluencerService'
-// import Signin from './Signin'
+import {getAllRequest} from '../Services/requestInfluencerService'
 import RequestInfluencer from './RequestInfluencer'
 import ApproveInfluencers from './ApproveInfluencers'
 import AccountOverview from './AccountOverview'
 import ActiveRequest from './ActiveRequest'
+// import { Redirect } from 'react-router'
 
-function CurrentUserDash() {
+const CurrentUserDash = () => {
+    // if(!user.token ) return <Redirect from='' to='Signin' noThrow/>
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getAllRequest())
@@ -28,13 +29,30 @@ function CurrentUserDash() {
                 >
                     Over View
                 </li>
-                <li onClick={()=>setstate({state:"default"})}>Home</li>
-                <li onClick={()=>setstate({state:"request"})}>req Infl</li>
-                <li onClick={()=>setstate({state:"pendingRequest"})}>pending</li>
+                <li onClick={()=>{
+                    sessionStorage.setItem('dashState',"default")
+                    setstate({state:"default"})}
+                }>
+                    Home
+                </li>
+                <li onClick={()=>{
+                    sessionStorage.setItem('dashState',"request")
+                    setstate({state:"request"})}
+                }>
+                    req Infl
+                </li>
+                <li onClick={()=>{
+                    sessionStorage.setItem('dashState',"pendingRequest")
+                    setstate({state:"pendingRequest"})
+                }}>
+                    pending
+                </li>
                 <li onClick={()=>{
                     sessionStorage.setItem('dashState',"buyerRequest")
                     setstate({state:"buyerRequest"})
-                }}>buyer's req</li>
+                }}>
+                    buyer's req
+                </li>
             </ul>
             <div className="dash-nav">
                 { 
