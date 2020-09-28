@@ -9,16 +9,19 @@ import AccountOverview from './AccountOverview'
 import ActiveRequest from './ActiveRequest'
 // import { Redirect } from 'react-router'
 
-const CurrentUserDash = () => {
-    // if(!user.token ) return <Redirect from='' to='Signin' noThrow/>
+const CurrentUserDash = (props) => {
+    
     const dispatch = useDispatch()
+    // const token = localStorage.getItem('postedU')
     useEffect(() => {
         dispatch(getAllRequest())
         // dispatch(getRequestByUserId())
     }, [dispatch])
     const [state, setstate] = useState({state: sessionStorage.getItem('dashState') ? sessionStorage.getItem('dashState') : "default"})
-
-    console.log(state, state.state)
+    
+    // if(!token || token === " ") return props.history.push('/')
+    // else
+    // console.log(state, state.state)
     return (
         <div className="current-user-dash">
             <ul className="dash-navbar">

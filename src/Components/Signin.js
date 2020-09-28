@@ -1,11 +1,24 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {loginUser} from '../Services/userLoginService'
+import {loginUser, isUserAuth} from '../Services/userLoginService'
 
-const Signin = () => {
+const Signin = (props) => {
     const initialState = {userName:"", password:""}
     const [login, setLogin] = useState(initialState)
-    // console.log(login)
+    //  isUserAuth()
+
+    useEffect(() => {
+        console.log("test")
+        const checkAuth = async()=>{
+            console.log("test3243")
+
+            const auth = await isUserAuth()
+            console.log( auth, "lmnjknkn")
+            if( auth) return props.history.push('/Dashboard')
+        }
+        checkAuth()
+    }, [props.history])
+
     return (
         <section className='padding-120 signin transparent'>
             <div className="container stacked">
@@ -20,11 +33,13 @@ const Signin = () => {
                     sigin with Instagram
                 </Link>
             {/* </div> */}
-            <form onSubmit={(e)=>{
+
+            <form onSubmit={async(e)=>{
                 e.preventDefault()
-                loginUser(login)
+                const logSuccess = await loginUser(login)
                 setLogin(initialState)
-                }}>
+                if(logSuccess) return props.history.push('/Dashboard')
+            }}>
                 <div className="form_format">
                     <label>userName</label><br/>
                     <input
